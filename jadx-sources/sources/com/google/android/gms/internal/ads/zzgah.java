@@ -1,0 +1,89 @@
+package com.google.android.gms.internal.ads;
+
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Set;
+import java.util.SortedSet;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes.dex */
+public final class zzgah {
+    public static int zza(Set set) {
+        Iterator it = set.iterator();
+        int iHashCode = 0;
+        while (it.hasNext()) {
+            Object next = it.next();
+            iHashCode += next != null ? next.hashCode() : 0;
+        }
+        return iHashCode;
+    }
+
+    public static zzgaf zzb(Set set, Set set2) {
+        zzfve.zzc(set, "set1");
+        zzfve.zzc(set2, "set2");
+        return new zzgab(set, set2);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static Set zzc(Set set, zzfvf zzfvfVar) {
+        if (set instanceof SortedSet) {
+            SortedSet sortedSet = (SortedSet) set;
+            if (!(sortedSet instanceof zzgac)) {
+                return new zzgad(sortedSet, zzfvfVar);
+            }
+            zzgac zzgacVar = (zzgac) sortedSet;
+            return new zzgad((SortedSet) zzgacVar.zza, zzfvi.zza(zzgacVar.zzb, zzfvfVar));
+        }
+        if (!(set instanceof zzgac)) {
+            set.getClass();
+            return new zzgac(set, zzfvfVar);
+        }
+        zzgac zzgacVar2 = (zzgac) set;
+        return new zzgac((Set) zzgacVar2.zza, zzfvi.zza(zzgacVar2.zzb, zzfvfVar));
+    }
+
+    public static boolean zzd(Set set, Object obj) {
+        if (set == obj) {
+            return true;
+        }
+        if (obj instanceof Set) {
+            Set set2 = (Set) obj;
+            try {
+                if (set.size() == set2.size()) {
+                    if (set.containsAll(set2)) {
+                        return true;
+                    }
+                }
+            } catch (ClassCastException | NullPointerException unused) {
+            }
+        }
+        return false;
+    }
+
+    public static boolean zze(Set set, Collection collection) {
+        collection.getClass();
+        if (collection instanceof zzfzn) {
+            collection = ((zzfzn) collection).zza();
+        }
+        if (!(collection instanceof Set) || collection.size() <= set.size()) {
+            return zzf(set, collection.iterator());
+        }
+        Iterator it = set.iterator();
+        boolean z2 = false;
+        while (it.hasNext()) {
+            if (collection.contains(it.next())) {
+                it.remove();
+                z2 = true;
+            }
+        }
+        return z2;
+    }
+
+    public static boolean zzf(Set set, Iterator it) {
+        boolean zRemove = false;
+        while (it.hasNext()) {
+            zRemove |= set.remove(it.next());
+        }
+        return zRemove;
+    }
+}

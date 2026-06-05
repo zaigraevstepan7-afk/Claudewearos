@@ -1,0 +1,32 @@
+package com.google.android.gms.tasks;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes2.dex */
+final class zzc implements Runnable {
+    final /* synthetic */ Task zza;
+    final /* synthetic */ zzd zzb;
+
+    public zzc(zzd zzdVar, Task task) {
+        this.zzb = zzdVar;
+        this.zza = task;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        if (this.zza.isCanceled()) {
+            this.zzb.zzc.zzc();
+            return;
+        }
+        try {
+            this.zzb.zzc.zzb(this.zzb.zzb.then(this.zza));
+        } catch (RuntimeExecutionException e10) {
+            if (e10.getCause() instanceof Exception) {
+                this.zzb.zzc.zza((Exception) e10.getCause());
+            } else {
+                this.zzb.zzc.zza(e10);
+            }
+        } catch (Exception e11) {
+            this.zzb.zzc.zza(e11);
+        }
+    }
+}

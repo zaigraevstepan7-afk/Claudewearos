@@ -1,0 +1,18 @@
+package com.google.android.gms.internal.auth;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes.dex */
+public final class zzht implements zzdj {
+    private static final zzht zza = new zzht();
+    private final zzdj zzb = zzdo.zza(zzdo.zzb(new zzhv()));
+
+    public static boolean zzc() {
+        return zza.zza().zza();
+    }
+
+    @Override // com.google.android.gms.internal.auth.zzdj
+    /* renamed from: zzb, reason: merged with bridge method [inline-methods] */
+    public final zzhu zza() {
+        return (zzhu) this.zzb.zza();
+    }
+}

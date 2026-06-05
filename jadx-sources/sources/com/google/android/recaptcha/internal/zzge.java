@@ -1,0 +1,21 @@
+package com.google.android.recaptcha.internal;
+
+import com.google.android.recaptcha.internal.zzge;
+import com.google.android.recaptcha.internal.zzgf;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes2.dex */
+public abstract class zzge<MessageType extends zzgf<MessageType, BuilderType>, BuilderType extends zzge<MessageType, BuilderType>> implements zzkd {
+    @Override // 
+    public abstract zzge zza();
+
+    public abstract zzge zzb(zzgf zzgfVar);
+
+    @Override // com.google.android.recaptcha.internal.zzkd
+    public final /* bridge */ /* synthetic */ zzkd zzc(zzke zzkeVar) {
+        if (zzY().getClass().isInstance(zzkeVar)) {
+            return zzb((zzgf) zzkeVar);
+        }
+        throw new IllegalArgumentException("mergeFrom(MessageLite) can only merge messages of the same type.");
+    }
+}

@@ -1,0 +1,37 @@
+package com.google.android.gms.internal.play_billing;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes2.dex */
+public final class zzke extends zzhg implements zzin {
+    private zzke() {
+        throw null;
+    }
+
+    public final zzke zza(String str) {
+        zzj();
+        zzki.zzC((zzki) this.zza, str);
+        return this;
+    }
+
+    public final zzke zzm(String str) {
+        zzj();
+        zzki.zzD((zzki) this.zza, str);
+        return this;
+    }
+
+    public final zzke zzn(int i10) {
+        zzj();
+        zzki.zzE((zzki) this.zza, i10);
+        return this;
+    }
+
+    public final zzke zzo(int i10) {
+        zzj();
+        zzki.zzF((zzki) this.zza, i10);
+        return this;
+    }
+
+    public /* synthetic */ zzke(zzkh zzkhVar) {
+        super(zzki.zzb);
+    }
+}

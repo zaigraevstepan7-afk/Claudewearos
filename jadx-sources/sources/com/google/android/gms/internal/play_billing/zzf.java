@@ -1,0 +1,18 @@
+package com.google.android.gms.internal.play_billing;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes2.dex */
+abstract class zzf {
+    public /* synthetic */ zzf(zzp zzpVar) {
+    }
+
+    public abstract void zza(zzo zzoVar, zzo zzoVar2);
+
+    public abstract void zzb(zzo zzoVar, Thread thread);
+
+    public abstract boolean zzc(zzq zzqVar, zzj zzjVar, zzj zzjVar2);
+
+    public abstract boolean zzd(zzq zzqVar, Object obj, Object obj2);
+
+    public abstract boolean zze(zzq zzqVar, zzo zzoVar, zzo zzoVar2);
+}

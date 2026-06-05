@@ -1,0 +1,99 @@
+package com.google.android.recaptcha.internal;
+
+import com.google.android.recaptcha.internal.zzge;
+import com.google.android.recaptcha.internal.zzgf;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import m6.a;
+import t.m1;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes2.dex */
+public abstract class zzgf<MessageType extends zzgf<MessageType, BuilderType>, BuilderType extends zzge<MessageType, BuilderType>> implements zzke {
+    protected int zza = 0;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public static void zzc(Iterable iterable, List list) {
+        byte[] bArr = zzjc.zzd;
+        iterable.getClass();
+        if (iterable instanceof zzjm) {
+            List listZzh = ((zzjm) iterable).zzh();
+            zzjm zzjmVar = (zzjm) list;
+            int size = list.size();
+            for (Object obj : listZzh) {
+                if (obj == null) {
+                    String strE = a.e(zzjmVar.size() - size, "Element at index ", " is null.");
+                    int size2 = zzjmVar.size();
+                    while (true) {
+                        size2--;
+                        if (size2 < size) {
+                            throw new NullPointerException(strE);
+                        }
+                        zzjmVar.remove(size2);
+                    }
+                } else if (obj instanceof zzgw) {
+                    zzjmVar.zzi((zzgw) obj);
+                } else {
+                    zzjmVar.add((String) obj);
+                }
+            }
+            return;
+        }
+        if (iterable instanceof zzkm) {
+            list.addAll(iterable);
+            return;
+        }
+        if (list instanceof ArrayList) {
+            ((ArrayList) list).ensureCapacity(iterable.size() + list.size());
+        }
+        int size3 = list.size();
+        for (Object obj2 : iterable) {
+            if (obj2 == null) {
+                String strE2 = a.e(list.size() - size3, "Element at index ", " is null.");
+                int size4 = list.size();
+                while (true) {
+                    size4--;
+                    if (size4 < size3) {
+                        throw new NullPointerException(strE2);
+                    }
+                    list.remove(size4);
+                }
+            } else {
+                list.add(obj2);
+            }
+        }
+    }
+
+    public int zza(zzkr zzkrVar) {
+        throw null;
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzke
+    public final zzgw zzb() {
+        try {
+            int iZzn = zzn();
+            zzgw zzgwVar = zzgw.zzb;
+            byte[] bArr = new byte[iZzn];
+            zzhh zzhhVarZzA = zzhh.zzA(bArr, 0, iZzn);
+            zze(zzhhVarZzA);
+            zzhhVarZzA.zzB();
+            return new zzgt(bArr);
+        } catch (IOException e10) {
+            throw new RuntimeException(m1.j("Serializing ", getClass().getName(), " to a ByteString threw an IOException (should never happen)."), e10);
+        }
+    }
+
+    public final byte[] zzd() {
+        try {
+            int iZzn = zzn();
+            byte[] bArr = new byte[iZzn];
+            zzhh zzhhVarZzA = zzhh.zzA(bArr, 0, iZzn);
+            zze(zzhhVarZzA);
+            zzhhVarZzA.zzB();
+            return bArr;
+        } catch (IOException e10) {
+            throw new RuntimeException(m1.j("Serializing ", getClass().getName(), " to a byte array threw an IOException (should never happen)."), e10);
+        }
+    }
+}

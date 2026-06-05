@@ -1,0 +1,32 @@
+package com.google.android.recaptcha.internal;
+
+import java.lang.reflect.Field;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes2.dex */
+public final class zzdt implements zzdd {
+    public static final zzdt zza = new zzdt();
+
+    private zzdt() {
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzdd
+    public final void zza(int i10, zzcj zzcjVar, zzpq... zzpqVarArr) throws IllegalAccessException, IllegalArgumentException, zzae {
+        if (zzpqVarArr.length != 3) {
+            throw new zzae(4, 3, null);
+        }
+        Object objZza = zzcjVar.zzc().zza(zzpqVarArr[0]);
+        if (true != (objZza instanceof Field)) {
+            objZza = null;
+        }
+        Field field = (Field) objZza;
+        if (field == null) {
+            throw new zzae(4, 5, null);
+        }
+        try {
+            field.set(zzcjVar.zzc().zza(zzpqVarArr[1]), zzcjVar.zzc().zza(zzpqVarArr[2]));
+        } catch (Exception e10) {
+            throw new zzae(6, 11, e10);
+        }
+    }
+}

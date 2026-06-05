@@ -1,0 +1,15 @@
+package w3;
+
+import android.view.WindowManager;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes.dex */
+public final class o {
+
+    /* renamed from: a, reason: collision with root package name */
+    public static final o f18529a = new o();
+
+    public final void a(WindowManager.LayoutParams layoutParams) {
+        layoutParams.layoutInDisplayCutoutMode = 3;
+    }
+}

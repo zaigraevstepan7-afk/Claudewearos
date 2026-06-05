@@ -1,0 +1,21 @@
+package gf;
+
+import android.os.Handler;
+import android.os.Message;
+import t.m1;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes2.dex */
+public final class a implements Handler.Callback {
+    @Override // android.os.Handler.Callback
+    public final boolean handleMessage(Message message) {
+        int i10 = message.what;
+        if (i10 == 0) {
+            throw m1.f(message.obj);
+        }
+        if (i10 != 1) {
+            return false;
+        }
+        throw m1.f(message.obj);
+    }
+}

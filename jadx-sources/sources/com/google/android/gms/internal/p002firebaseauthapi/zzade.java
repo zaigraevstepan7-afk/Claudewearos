@@ -1,0 +1,26 @@
+package com.google.android.gms.internal.p002firebaseauthapi;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes2.dex */
+final class zzade implements Runnable {
+    private final /* synthetic */ zzadh zza;
+    private final /* synthetic */ zzadb zzb;
+
+    public zzade(zzadb zzadbVar, zzadh zzadhVar) {
+        this.zza = zzadhVar;
+        this.zzb = zzadbVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        synchronized (this.zzb.zza.zzh) {
+            try {
+                if (!this.zzb.zza.zzh.isEmpty()) {
+                    this.zza.zza(this.zzb.zza.zzh.get(0), new Object[0]);
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+}

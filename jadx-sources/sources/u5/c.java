@@ -1,0 +1,211 @@
+package u5;
+
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes.dex */
+public final class c {
+
+    /* renamed from: a, reason: collision with root package name */
+    public final int f16626a;
+
+    /* renamed from: b, reason: collision with root package name */
+    public final int f16627b;
+
+    /* renamed from: c, reason: collision with root package name */
+    public final long f16628c;
+
+    /* renamed from: d, reason: collision with root package name */
+    public final byte[] f16629d;
+
+    public c(int i10, byte[] bArr, int i11) {
+        this(-1L, bArr, i10, i11);
+    }
+
+    public static c a(long j, ByteOrder byteOrder) {
+        long[] jArr = {j};
+        ByteBuffer byteBufferWrap = ByteBuffer.wrap(new byte[g.E[4]]);
+        byteBufferWrap.order(byteOrder);
+        byteBufferWrap.putInt((int) jArr[0]);
+        return new c(4, byteBufferWrap.array(), 1);
+    }
+
+    public static c b(e eVar, ByteOrder byteOrder) {
+        ByteBuffer byteBufferWrap = ByteBuffer.wrap(new byte[g.E[5]]);
+        byteBufferWrap.order(byteOrder);
+        e eVar2 = new e[]{eVar}[0];
+        byteBufferWrap.putInt((int) eVar2.f16634a);
+        byteBufferWrap.putInt((int) eVar2.f16635b);
+        return new c(5, byteBufferWrap.array(), 1);
+    }
+
+    public static c c(ByteOrder byteOrder, int i10) {
+        ByteBuffer byteBufferWrap = ByteBuffer.wrap(new byte[g.E[3]]);
+        byteBufferWrap.order(byteOrder);
+        byteBufferWrap.putShort((short) new int[]{i10}[0]);
+        return new c(3, byteBufferWrap.array(), 1);
+    }
+
+    public final double d(ByteOrder byteOrder) throws Throwable {
+        Object objG = g(byteOrder);
+        if (objG == null) {
+            throw new NumberFormatException("NULL can't be converted to a double value");
+        }
+        if (objG instanceof String) {
+            return Double.parseDouble((String) objG);
+        }
+        if (objG instanceof long[]) {
+            if (((long[]) objG).length == 1) {
+                return r5[0];
+            }
+            throw new NumberFormatException("There are more than one component");
+        }
+        if (objG instanceof int[]) {
+            if (((int[]) objG).length == 1) {
+                return r5[0];
+            }
+            throw new NumberFormatException("There are more than one component");
+        }
+        if (objG instanceof double[]) {
+            double[] dArr = (double[]) objG;
+            if (dArr.length == 1) {
+                return dArr[0];
+            }
+            throw new NumberFormatException("There are more than one component");
+        }
+        if (!(objG instanceof e[])) {
+            throw new NumberFormatException("Couldn't find a double value");
+        }
+        e[] eVarArr = (e[]) objG;
+        if (eVarArr.length != 1) {
+            throw new NumberFormatException("There are more than one component");
+        }
+        e eVar = eVarArr[0];
+        return eVar.f16634a / eVar.f16635b;
+    }
+
+    public final int e(ByteOrder byteOrder) throws Throwable {
+        Object objG = g(byteOrder);
+        if (objG == null) {
+            throw new NumberFormatException("NULL can't be converted to a integer value");
+        }
+        if (objG instanceof String) {
+            return Integer.parseInt((String) objG);
+        }
+        if (objG instanceof long[]) {
+            long[] jArr = (long[]) objG;
+            if (jArr.length == 1) {
+                return (int) jArr[0];
+            }
+            throw new NumberFormatException("There are more than one component");
+        }
+        if (!(objG instanceof int[])) {
+            throw new NumberFormatException("Couldn't find a integer value");
+        }
+        int[] iArr = (int[]) objG;
+        if (iArr.length == 1) {
+            return iArr[0];
+        }
+        throw new NumberFormatException("There are more than one component");
+    }
+
+    public final String f(ByteOrder byteOrder) throws Throwable {
+        Object objG = g(byteOrder);
+        if (objG == null) {
+            return null;
+        }
+        if (objG instanceof String) {
+            return (String) objG;
+        }
+        StringBuilder sb2 = new StringBuilder();
+        int i10 = 0;
+        if (objG instanceof long[]) {
+            long[] jArr = (long[]) objG;
+            while (i10 < jArr.length) {
+                sb2.append(jArr[i10]);
+                i10++;
+                if (i10 != jArr.length) {
+                    sb2.append(",");
+                }
+            }
+            return sb2.toString();
+        }
+        if (objG instanceof int[]) {
+            int[] iArr = (int[]) objG;
+            while (i10 < iArr.length) {
+                sb2.append(iArr[i10]);
+                i10++;
+                if (i10 != iArr.length) {
+                    sb2.append(",");
+                }
+            }
+            return sb2.toString();
+        }
+        if (objG instanceof double[]) {
+            double[] dArr = (double[]) objG;
+            while (i10 < dArr.length) {
+                sb2.append(dArr[i10]);
+                i10++;
+                if (i10 != dArr.length) {
+                    sb2.append(",");
+                }
+            }
+            return sb2.toString();
+        }
+        if (!(objG instanceof e[])) {
+            return null;
+        }
+        e[] eVarArr = (e[]) objG;
+        while (i10 < eVarArr.length) {
+            sb2.append(eVarArr[i10].f16634a);
+            sb2.append('/');
+            sb2.append(eVarArr[i10].f16635b);
+            i10++;
+            if (i10 != eVarArr.length) {
+                sb2.append(",");
+            }
+        }
+        return sb2.toString();
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Not initialized variable reg: 4, insn: 0x0032: MOVE (r3 I:??[OBJECT, ARRAY]) = (r4 I:??[OBJECT, ARRAY]) (LINE:51), block:B:17:0x0032 */
+    /* JADX WARN: Removed duplicated region for block: B:103:0x012e A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Type inference failed for: r14v11, types: [java.lang.String] */
+    /* JADX WARN: Type inference failed for: r14v19, types: [java.lang.String] */
+    /* JADX WARN: Type inference failed for: r14v23, types: [int[]] */
+    /* JADX WARN: Type inference failed for: r14v24, types: [long[]] */
+    /* JADX WARN: Type inference failed for: r14v25, types: [u5.e[]] */
+    /* JADX WARN: Type inference failed for: r14v26, types: [int[]] */
+    /* JADX WARN: Type inference failed for: r14v27, types: [int[]] */
+    /* JADX WARN: Type inference failed for: r14v28, types: [u5.e[]] */
+    /* JADX WARN: Type inference failed for: r14v29, types: [double[]] */
+    /* JADX WARN: Type inference failed for: r14v30, types: [java.io.Serializable] */
+    /* JADX WARN: Type inference failed for: r14v31, types: [double[]] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+        To view partially-correct add '--show-bad-code' argument
+    */
+    public final java.io.Serializable g(java.nio.ByteOrder r14) throws java.lang.Throwable {
+        /*
+            Method dump skipped, instructions count: 340
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: u5.c.g(java.nio.ByteOrder):java.io.Serializable");
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("(");
+        sb2.append(g.D[this.f16626a]);
+        sb2.append(", data length:");
+        return m6.a.h(sb2, this.f16629d.length, ")");
+    }
+
+    public c(long j, byte[] bArr, int i10, int i11) {
+        this.f16626a = i10;
+        this.f16627b = i11;
+        this.f16628c = j;
+        this.f16629d = bArr;
+    }
+}

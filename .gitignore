@@ -1,0 +1,13 @@
+# Инструменты, скачиваемые build.sh (не хранятся в репозитории)
+/tools/
+
+# Артефакты сборки apktool / подписи
+/dist/
+/decompiled/build/
+/decompiled/dist/
+*-aligned*.apk
+*-debugSigned.apk
+
+# Прочее
+*.log
+.DS_Store

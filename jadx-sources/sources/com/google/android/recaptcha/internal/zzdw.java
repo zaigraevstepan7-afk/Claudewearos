@@ -1,0 +1,51 @@
+package com.google.android.recaptcha.internal;
+
+import java.util.ArrayList;
+import java.util.Objects;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes2.dex */
+public final class zzdw implements zzdd {
+    public static final zzdw zza = new zzdw();
+
+    private zzdw() {
+    }
+
+    @Override // com.google.android.recaptcha.internal.zzdd
+    public final void zza(int i10, zzcj zzcjVar, zzpq... zzpqVarArr) throws zzae {
+        Object array;
+        if (zzpqVarArr.length != 2) {
+            throw new zzae(4, 3, null);
+        }
+        Object objZza = zzcjVar.zzc().zza(zzpqVarArr[0]);
+        if (true != Objects.nonNull(objZza)) {
+            objZza = null;
+        }
+        if (objZza == null) {
+            throw new zzae(4, 5, null);
+        }
+        Object objZza2 = zzcjVar.zzc().zza(zzpqVarArr[1]);
+        if (true != (objZza2 instanceof Integer)) {
+            objZza2 = null;
+        }
+        Integer num = (Integer) objZza2;
+        if (num == null) {
+            throw new zzae(4, 5, null);
+        }
+        int iIntValue = num.intValue();
+        if (objZza instanceof Integer) {
+            array = Integer.valueOf(((Number) objZza).intValue() - iIntValue);
+        } else {
+            if (!(objZza instanceof int[])) {
+                throw new zzae(4, 5, null);
+            }
+            int[] iArr = (int[]) objZza;
+            ArrayList arrayList = new ArrayList(iArr.length);
+            for (int i11 : iArr) {
+                arrayList.add(Integer.valueOf(i11 - iIntValue));
+            }
+            array = arrayList.toArray(new Integer[0]);
+        }
+        zzcjVar.zzc().zzf(i10, array);
+    }
+}

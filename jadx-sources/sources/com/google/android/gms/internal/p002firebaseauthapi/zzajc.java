@@ -1,0 +1,33 @@
+package com.google.android.gms.internal.p002firebaseauthapi;
+
+import com.google.android.gms.internal.p002firebaseauthapi.zzaje;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes2.dex */
+final class zzajc implements zzakm {
+    private static final zzajc zza = new zzajc();
+
+    private zzajc() {
+    }
+
+    public static zzajc zza() {
+        return zza;
+    }
+
+    @Override // com.google.android.gms.internal.p002firebaseauthapi.zzakm
+    public final boolean zzb(Class<?> cls) {
+        return zzaje.class.isAssignableFrom(cls);
+    }
+
+    @Override // com.google.android.gms.internal.p002firebaseauthapi.zzakm
+    public final zzakn zza(Class<?> cls) {
+        if (!zzaje.class.isAssignableFrom(cls)) {
+            throw new IllegalArgumentException("Unsupported message type: ".concat(cls.getName()));
+        }
+        try {
+            return (zzakn) zzaje.zza(cls.asSubclass(zzaje.class)).zza(zzaje.zzf.zzc, (Object) null, (Object) null);
+        } catch (Exception e10) {
+            throw new RuntimeException("Unable to get message info for ".concat(cls.getName()), e10);
+        }
+    }
+}

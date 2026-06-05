@@ -1,0 +1,35 @@
+package r5;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes.dex */
+public final class q implements p {
+
+    /* renamed from: a, reason: collision with root package name */
+    public final int f13746a;
+
+    /* renamed from: b, reason: collision with root package name */
+    public int f13747b = -1;
+
+    /* renamed from: c, reason: collision with root package name */
+    public int f13748c = -1;
+
+    public q(int i10) {
+        this.f13746a = i10;
+    }
+
+    @Override // r5.p
+    public final boolean d(CharSequence charSequence, int i10, int i11, x xVar) {
+        int i12 = this.f13746a;
+        if (i10 > i12 || i12 >= i11) {
+            return i11 <= i12;
+        }
+        this.f13747b = i10;
+        this.f13748c = i11;
+        return false;
+    }
+
+    @Override // r5.p
+    public final Object c() {
+        return this;
+    }
+}

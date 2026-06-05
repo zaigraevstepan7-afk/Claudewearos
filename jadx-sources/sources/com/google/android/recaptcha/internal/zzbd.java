@@ -1,0 +1,43 @@
+package com.google.android.recaptcha.internal;
+
+import fj.g;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes2.dex */
+public final class zzbd {
+    public static final zzbc zza = new zzbc(null);
+    private String zzb;
+    private String zzc;
+    private String zzd;
+
+    private zzbd(String str, String str2) {
+        this.zzb = str;
+        this.zzc = str2;
+    }
+
+    public final zzbb zza(zzne zzneVar) {
+        return new zzbb(zzneVar, this.zzb, this.zzc, this.zzd, null);
+    }
+
+    public final zzbd zzb() {
+        return new zzbd(this);
+    }
+
+    public final zzbd zzc(String str) {
+        this.zzd = str;
+        return this;
+    }
+
+    public final String zzd() {
+        return this.zzc;
+    }
+
+    public /* synthetic */ zzbd(String str, String str2, g gVar) {
+        this(str, str2);
+    }
+
+    private zzbd(zzbd zzbdVar) {
+        this(zzbdVar.zzb, zzbdVar.zzc);
+        this.zzd = zzbdVar.zzd;
+    }
+}

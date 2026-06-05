@@ -1,0 +1,17 @@
+package j1;
+
+import b0.g2;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes.dex */
+public final class y extends j0 {
+
+    /* renamed from: c, reason: collision with root package name */
+    public static final y f8662c = new y(0, 0, 3);
+
+    @Override // j1.j0
+    public final void a(androidx.datastore.preferences.protobuf.k kVar, f1.a aVar, i1.k kVar2, p1.k kVar3, k0 k0Var) {
+        kVar2.n(kVar2.f8154t, new g2(kVar3, 5));
+        kVar2.H();
+    }
+}

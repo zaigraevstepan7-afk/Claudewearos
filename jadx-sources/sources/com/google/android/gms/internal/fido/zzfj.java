@@ -1,0 +1,40 @@
+package com.google.android.gms.internal.fido;
+
+import org.checkerframework.checker.nullness.compatqual.NullableDecl;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes.dex */
+public final class zzfj {
+    private static final String[] zza = {"com.google.common.flogger.util.StackWalkerStackGetter", "com.google.common.flogger.util.JavaLangAccessStackGetter"};
+    private static final zzfn zzb;
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v8, types: [com.google.android.gms.internal.fido.zzfn] */
+    static {
+        zzfo zzfoVar;
+        int i10 = 0;
+        while (true) {
+            if (i10 >= 2) {
+                zzfoVar = new zzfo();
+                break;
+            }
+            zzfoVar = null;
+            try {
+                zzfoVar = (zzfn) Class.forName(zza[i10]).asSubclass(zzfn.class).getDeclaredConstructor(null).newInstance(null);
+            } catch (Throwable unused) {
+            }
+            if (zzfoVar != null) {
+                break;
+            } else {
+                i10++;
+            }
+        }
+        zzb = zzfoVar;
+    }
+
+    @NullableDecl
+    public static StackTraceElement zza(Class cls, int i10) {
+        zzfk.zza(cls, "target");
+        return zzb.zza(cls, 2);
+    }
+}

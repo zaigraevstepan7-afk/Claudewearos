@@ -1,0 +1,42 @@
+package com.google.android.gms.internal.ads;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes.dex */
+final class zzxg implements zzwz {
+    private final zzwz zza;
+    private final long zzb;
+
+    public zzxg(zzwz zzwzVar, long j) {
+        this.zza = zzwzVar;
+        this.zzb = j;
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzwz
+    public final int zza(zzkv zzkvVar, zzhs zzhsVar, int i10) {
+        int iZza = this.zza.zza(zzkvVar, zzhsVar, i10);
+        if (iZza != -4) {
+            return iZza;
+        }
+        zzhsVar.zze += this.zzb;
+        return -4;
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzwz
+    public final int zzb(long j) {
+        return this.zza.zzb(j - this.zzb);
+    }
+
+    public final zzwz zzc() {
+        return this.zza;
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzwz
+    public final void zzd() {
+        this.zza.zzd();
+    }
+
+    @Override // com.google.android.gms.internal.ads.zzwz
+    public final boolean zze() {
+        return this.zza.zze();
+    }
+}

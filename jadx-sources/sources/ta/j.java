@@ -1,0 +1,29 @@
+package ta;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes.dex */
+public final class j extends m {
+
+    /* renamed from: a, reason: collision with root package name */
+    public final sa.w f16166a;
+
+    public j(sa.w wVar) {
+        fj.l.f(wVar, "option");
+        this.f16166a = wVar;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        return (obj instanceof j) && this.f16166a == ((j) obj).f16166a;
+    }
+
+    public final int hashCode() {
+        return this.f16166a.hashCode();
+    }
+
+    public final String toString() {
+        return "OptionSelected(option=" + this.f16166a + ")";
+    }
+}

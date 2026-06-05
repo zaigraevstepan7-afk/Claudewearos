@@ -1,0 +1,13 @@
+package com.google.android.gms.internal.ads;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes.dex */
+public interface zzgzd extends zzgzh {
+    int zzd(int i10);
+
+    int zze(int i10, int i11);
+
+    zzgzd zzh(int i10);
+
+    void zzi(int i10);
+}

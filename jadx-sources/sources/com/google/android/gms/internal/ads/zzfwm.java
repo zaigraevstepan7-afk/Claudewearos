@@ -1,0 +1,40 @@
+package com.google.android.gms.internal.ads;
+
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Map;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes.dex */
+final class zzfwm implements Iterator {
+    Map.Entry zza;
+    final /* synthetic */ Iterator zzb;
+    final /* synthetic */ zzfwn zzc;
+
+    public zzfwm(zzfwn zzfwnVar, Iterator it) {
+        this.zzb = it;
+        this.zzc = zzfwnVar;
+    }
+
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return this.zzb.hasNext();
+    }
+
+    @Override // java.util.Iterator
+    public final Object next() {
+        Map.Entry entry = (Map.Entry) this.zzb.next();
+        this.zza = entry;
+        return entry.getKey();
+    }
+
+    @Override // java.util.Iterator
+    public final void remove() {
+        zzfve.zzm(this.zza != null, "no calls to next() since the last call to remove()");
+        Collection collection = (Collection) this.zza.getValue();
+        this.zzb.remove();
+        this.zzc.zza.zzb -= collection.size();
+        collection.clear();
+        this.zza = null;
+    }
+}

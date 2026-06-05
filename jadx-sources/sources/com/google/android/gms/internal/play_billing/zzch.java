@@ -1,0 +1,43 @@
+package com.google.android.gms.internal.play_billing;
+
+import java.util.Arrays;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes2.dex */
+class zzch extends zzci {
+    Object[] zza;
+    int zzb;
+    boolean zzc;
+
+    public zzch(int i10) {
+        zzbw.zza(i10, "initialCapacity");
+        this.zza = new Object[i10];
+        this.zzb = 0;
+    }
+
+    private final void zzd(int i10) {
+        int length = this.zza.length;
+        int iZzc = zzci.zzc(length, this.zzb + i10);
+        if (iZzc > length || this.zzc) {
+            this.zza = Arrays.copyOf(this.zza, iZzc);
+            this.zzc = false;
+        }
+    }
+
+    public final zzch zza(Object obj) {
+        obj.getClass();
+        zzd(1);
+        Object[] objArr = this.zza;
+        int i10 = this.zzb;
+        this.zzb = i10 + 1;
+        objArr[i10] = obj;
+        return this;
+    }
+
+    public final void zzb(Object[] objArr, int i10) {
+        zzdd.zzb(objArr, i10);
+        zzd(i10);
+        System.arraycopy(objArr, 0, this.zza, this.zzb, i10);
+        this.zzb += i10;
+    }
+}

@@ -1,0 +1,17 @@
+package androidx.lifecycle;
+
+/* compiled from: r8-map-id-d9727bc7e00235ac513a61fce9aaf2b7a3ad41c0941d80eeaba89f3cd6d3eec5 */
+/* loaded from: classes.dex */
+public interface e extends s {
+    default void b(t tVar) {
+    }
+
+    default void g(t tVar) {
+    }
+
+    default void l(t tVar) {
+    }
+
+    default void n(t tVar) {
+    }
+}

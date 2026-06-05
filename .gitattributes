@@ -1,0 +1,15 @@
+# Декомпилированный и сгенерированный код — пометить, чтобы не искажать языковую
+# статистику репозитория и diff-просмотр на GitHub.
+decompiled/**   linguist-generated=true
+jadx-sources/** linguist-generated=true
+
+# Бинарные артефакты
+*.apk    binary
+*.dex    binary
+*.so     binary
+*.arsc   binary
+*.png    binary
+*.webp   binary
+*.jpg    binary
+*.ttf    binary
+*.otf    binary
