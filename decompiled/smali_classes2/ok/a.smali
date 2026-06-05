@@ -142,52 +142,13 @@
 
     .line 54
     .line 55
-    # Build a ColorOS-like scale-up (expand) animation for the app open.
-    # Falls back to a plain launch when the Context is not an Activity.
-    const/4 v2, 0x0
+    # Suppress the system activity-open transition so the launcher's own
+    # open animation flows straight into the app with no extra switch.
+    const/high16 v1, 0x10000
 
-    instance-of v3, v0, Landroid/app/Activity;
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    if-eqz v3, :cond_anim
-
-    move-object v3, v0
-
-    check-cast v3, Landroid/app/Activity;
-
-    invoke-virtual {v3}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/view/View;->getWidth()I
-
-    move-result v4
-
-    div-int/lit8 v4, v4, 0x2
-
-    invoke-virtual {v3}, Landroid/view/View;->getHeight()I
-
-    move-result v5
-
-    div-int/lit8 v5, v5, 0x2
-
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    invoke-static {v3, v4, v5, v6, v7}, Landroid/app/ActivityOptions;->makeScaleUpAnimation(Landroid/view/View;IIII)Landroid/app/ActivityOptions;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/app/ActivityOptions;->toBundle()Landroid/os/Bundle;
-
-    move-result-object v2
-
-    :cond_anim
-    invoke-virtual {v0, p1, v2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;Landroid/os/Bundle;)V
+    invoke-virtual {v0, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
     .line 56
     .line 57
